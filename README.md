@@ -2,10 +2,9 @@
 
 ![](header.png)
 
-
 ## Real-time collaborative drawing canvas with GraphQL & AWS AppSync
 
-![Repo](https://github.com/dabit3/appsync-graphql-real-time-canvas)
+[GitHub repo](https://github.com/dabit3/appsync-graphql-real-time-canvas)
 
 Base schema:
 
@@ -19,7 +18,7 @@ type Canvas @model {
 
 ## GraphQL Image Rekognition
 
-![Repo](https://github.com/dabit3/appsync-image-rekognition)
+[GitHub repo](https://github.com/dabit3/appsync-image-rekognition)
 
 Base schema
 
@@ -35,7 +34,7 @@ type Query {
 
 ## SpeakerChat - Real-time event comment platform with markdown support
 
-![Repo](https://github.com/dabit3/speakerchat)
+![GitHub repo](https://github.com/dabit3/speakerchat)
 
 Base schema:
 
@@ -76,7 +75,7 @@ type Query {
 
 ## Hype Beats
 
-![Repo](https://github.com/dabit3/hype-beats)
+![GitHub repo](https://github.com/dabit3/hype-beats)
 
 Base schema:
 
@@ -91,7 +90,7 @@ type DrumMachine @model {
 
 ## GraphQL text to audio translation
 
-![Repo](https://github.com/dabit3/appsync-web-translator)
+![GitHub repo](https://github.com/dabit3/appsync-web-translator)
 
 Base schema:
 
@@ -104,11 +103,3 @@ type TranslatedSentence {
   sentence: String!
 }
 ```
-
-
-
-
-
-
-
-
