@@ -16,14 +16,14 @@ type Canvas @model {
 }
 
 type Mutation {
-	createCanvas(input: CreateCanvasInput!): Canvas
-	updateCanvas(input: UpdateCanvasInput!): Canvas
-	deleteCanvas(input: DeleteCanvasInput!): Canvas
+  createCanvas(input: CreateCanvasInput!): Canvas
+  updateCanvas(input: UpdateCanvasInput!): Canvas
+  deleteCanvas(input: DeleteCanvasInput!): Canvas
 }
 
 type Query {
-	getCanvas(id: ID!): Canvas
-	listCanvass(filter: ModelCanvasFilterInput, limit: Int, nextToken: String): ModelCanvasConnection
+  getCanvas(id: ID!): Canvas
+  listCanvass(filter: ModelCanvasFilterInput, limit: Int, nextToken: String): ModelCanvasConnection
 }
 
 
