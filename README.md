@@ -14,6 +14,23 @@ type Canvas @model {
   clientId: String!
   data: String!
 }
+
+type Mutation {
+	createCanvas(input: CreateCanvasInput!): Canvas
+	updateCanvas(input: UpdateCanvasInput!): Canvas
+	deleteCanvas(input: DeleteCanvasInput!): Canvas
+}
+
+type Query {
+	getCanvas(id: ID!): Canvas
+	listCanvass(filter: ModelCanvasFilterInput, limit: Int, nextToken: String): ModelCanvasConnection
+}
+
+
+type Subscription {
+  onCreateCanvas: Canvas @aws_subscribe(mutations: ["createCanvas"])
+  onUpdateCanvas: Canvas @aws_subscribe(mutations: ["updateCanvas"])
+}
 ```
 
 ## Case 2: GraphQL Image Rekognition
@@ -59,12 +76,12 @@ type Comment @model {
 }
 
 type ModelCommentConnection {
-	items: [Comment]
-	nextToken: String
+  items: [Comment]
+  nextToken: String
 }
 
 type Subscription {
-	onCreateCommentWithId(talkId: ID!): Comment
+  onCreateCommentWithId(talkId: ID!): Comment
 		@aws_subscribe(mutations: ["createComment"])
 }
 
@@ -86,6 +103,23 @@ type DrumMachine @model {
   beats: String!
   name: String!
 }
+
+type Query {
+  getDrumMachine(id: ID!): DrumMachine
+  listDrumMachines(filter: ModelDrumMachineFilterInput, limit: Int, nextToken: String): ModelDrumMachineConnection
+}
+
+type Mutation {
+  createDrumMachine(input: CreateDrumMachineInput!): DrumMachine
+  updateDrumMachine(input: UpdateDrumMachineInput!): DrumMachine
+  deleteDrumMachine(input: DeleteDrumMachineInput!): DrumMachine
+}
+
+type Subscription {
+  onCreateDrumMachine: DrumMachine @aws_subscribe(mutations: ["createDrumMachine"])
+  onUpdateDrumMachine: DrumMachine @aws_subscribe(mutations: ["updateDrumMachine"])
+}
+
 ```
 
 ## Case 5: GraphQL text to audio translation
