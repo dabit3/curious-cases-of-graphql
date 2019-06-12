@@ -34,7 +34,7 @@ type Query {
 
 ## SpeakerChat - Real-time event comment platform with markdown support
 
-![GitHub repo](https://github.com/dabit3/speakerchat)
+[GitHub repo](https://github.com/dabit3/speakerchat)
 
 Base schema:
 
@@ -75,7 +75,7 @@ type Query {
 
 ## Hype Beats
 
-![GitHub repo](https://github.com/dabit3/hype-beats)
+[GitHub repo](https://github.com/dabit3/hype-beats)
 
 Base schema:
 
@@ -90,7 +90,7 @@ type DrumMachine @model {
 
 ## GraphQL text to audio translation
 
-![GitHub repo](https://github.com/dabit3/appsync-web-translator)
+[GitHub repo](https://github.com/dabit3/appsync-web-translator)
 
 Base schema:
 
