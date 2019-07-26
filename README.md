@@ -196,7 +196,7 @@ type Subscription {
 
 ## Case 7 - GraphQL SMS in Markdown
 
-[GitHub repo](https://github.com/dabit3/sms-graphql-ui/settings)
+[GitHub repo](https://g)ithub.com/dabit3/sms-graphql-ui/settings
 
 Base schema:
 
@@ -225,5 +225,24 @@ type Mutation {
 	createSMS(input: CreateSMSInput!): SMS
 	updateSMS(input: UpdateSMSInput!): SMS
 	deleteSMS(input: DeleteSMSInput!): SMS
+}
+```
+
+## Case 8 - Write With Me
+
+#### Real-come collaborative document editing
+
+[GitHub repo](https://github.com/dabit3/write-with-me)
+
+
+Base schema:
+
+```graphql
+type Post @model {
+  id: ID!
+  clientId: ID!
+  markdown: String!
+  title: String!
+  createdAt: String
 }
 ```
