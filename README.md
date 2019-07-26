@@ -137,3 +137,93 @@ type TranslatedSentence {
   sentence: String!
 }
 ```
+
+## Case 6: Infra as code with Conference app in a box
+
+[GitHub repo](https://github.com/dabit3/conference-app-in-a-box)
+
+Base schema:
+
+```graphql
+type Talk @model {
+  id: ID!
+  name: String!
+  speakerName: String!
+  speakerBio: String!
+  time: String
+  timeStamp: String
+  date: String
+  location: String
+  summary: String!
+  twitter: String
+  github: String
+  speakerAvatar: String
+  comments: [Comment] @connection(name: "TalkComments")
+}
+
+type Comment @model {
+  id: ID!
+  talkId: ID
+  talk: Talk @connection(sortField: "createdAt", name: "TalkComments", keyField: "talkId")
+  message: String
+  createdAt: String
+  createdBy: String
+  deviceId: ID
+}
+
+type Report @model {
+	id: ID!
+	commentId: ID!
+	comment: String!
+	talkTitle: String!
+	deviceId: ID
+}
+
+type ModelCommentConnection {
+	items: [Comment]
+	nextToken: String
+}
+
+type Query {
+  listCommentsByTalkId(talkId: ID!): ModelCommentConnection
+}
+
+type Subscription {
+  onCreateCommentWithId(talkId: ID!): Comment
+		@aws_subscribe(mutations: ["createComment"])
+}
+```
+
+## Case 7 - GraphQL SMS in Markdown
+
+[GitHub repo](https://github.com/dabit3/sms-graphql-ui/settings)
+
+Base schema:
+
+```graphql
+type SMS {
+	originationNumber: String!
+	messageBody: String!
+  id: ID!
+}
+
+type Query {
+	getSMS(originationNumber: String!): SMS
+	listSMS(filter: TableSMSFilterInput, limit: Int, nextToken: String): SMSConnection
+}
+
+type Subscription {
+	onCreateSMS(originationNumber: String, messageBody: String): SMS
+		@aws_subscribe(mutations: ["createSMS"])
+	onUpdateSMS(originationNumber: String, messageBody: String): SMS
+		@aws_subscribe(mutations: ["updateSMS"])
+	onDeleteSMS(originationNumber: String, messageBody: String): SMS
+		@aws_subscribe(mutations: ["deleteSMS"])
+}
+
+type Mutation {
+	createSMS(input: CreateSMSInput!): SMS
+	updateSMS(input: UpdateSMSInput!): SMS
+	deleteSMS(input: DeleteSMSInput!): SMS
+}
+```
