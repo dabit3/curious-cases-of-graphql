@@ -1,6 +1,6 @@
 # Curious Cases of GraphQL
 
-![](header.png)
+![](header.jpeg)
 
 ## Case 1: Real-time collaborative drawing canvas with GraphQL & AWS AppSync
 
