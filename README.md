@@ -196,7 +196,7 @@ type Subscription {
 
 ## Case 7 - GraphQL SMS in Markdown
 
-[GitHub repo](https://g)ithub.com/dabit3/sms-graphql-ui/settings
+[GitHub repo](https://github.com/dabit3/sms-graphql-ui)
 
 Base schema:
 
